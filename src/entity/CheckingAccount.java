@@ -14,7 +14,7 @@ public class CheckingAccount extends BankAccount{
     }
 
     @Override
-    public void withdraw(double amount) {
+    public synchronized void withdraw(double amount) {
         BigDecimal amountBigDecimal = new BigDecimal(String.valueOf(amount));
         if(amount > 0 && amountBigDecimal.compareTo(this.getBalance()) <= 0
                 && amountBigDecimal.compareTo(this.overdraftLimit) <= 0){
