@@ -22,3 +22,21 @@ May 14, 2025 12:01:22 PM manager.AccountManager addBankAccount
 INFO: Thêm tài khoản tiết kiệm thành công.
 May 14, 2025 12:01:22 PM manager.AccountManager addBankAccount
 INFO: Thêm tài khoản kết thúc
+May 14, 2025 1:07:52 PM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 14, 2025 1:07:53 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản tiết kiệm thành công.
+May 14, 2025 1:07:53 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 14, 2025 1:08:19 PM manager.AccountManager withDraw
+INFO: Thực hiện giao dịch rút tiền.
+May 14, 2025 1:08:19 PM manager.AccountManager withDraw
+WARNING: Số dư tài khoản không đủ!
+May 14, 2025 1:08:19 PM manager.AccountManager withDraw
+INFO: Giao dịch kết thúc.
+May 14, 2025 1:09:10 PM manager.AccountManager updateBankAccount
+INFO: Thực hiện cập nhật thông tin tài khoản.
+May 14, 2025 1:09:10 PM manager.AccountManager updateBankAccount
+INFO: Cập nhật thông tin tài khoản thành công
+May 14, 2025 1:09:10 PM manager.AccountManager updateBankAccount
+INFO: Cập nhật thông tin tài khoản kết thúc.

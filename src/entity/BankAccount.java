@@ -11,6 +11,7 @@ public class BankAccount {
     public void deposit(double amount) throws InvalidAmountException{
         if(amount > 0){
             this.balance = this.balance.add(new BigDecimal(String.valueOf(amount)));
+
         }
         else throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
     }
@@ -19,9 +20,8 @@ public class BankAccount {
         if (amountBigDecimal.compareTo(BigDecimal.valueOf(0)) <= 0) throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
         if(amountBigDecimal.compareTo(this.balance) > 0) throw new InsufficientFundsException("Số dư tài khoản không đủ!");
         this.balance = this.balance.subtract(new BigDecimal(String.valueOf(amount)));
-
     }
-    public void transferMoney(BankAccount toBankAccount,double amount) throws InvalidAmountException,InsufficientFundsException{
+    public synchronized void transferMoney(BankAccount toBankAccount,double amount) throws InvalidAmountException,InsufficientFundsException{
         BigDecimal amountBigDecimal = new BigDecimal(String.valueOf(amount));
         if (amountBigDecimal.compareTo(BigDecimal.valueOf(0)) <= 0) throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
         if(amountBigDecimal.compareTo(this.balance) > 0) throw new InsufficientFundsException("Số dư tài khoản không đủ!");

@@ -113,7 +113,12 @@ public class AccountManager {
             logger.info("Thực hiện giao dịch rút tiền.");
             existedAccount.withdraw(amount);
             logger.info("Rút tiền thành công.");
-        } catch (InvalidAmountException | InsufficientFundsException exception){
+        }
+        catch (AccountNotFoundException accountNotFoundException){
+            logger.warning(accountNotFoundException.getMessage());
+            throw accountNotFoundException;
+        }
+        catch (InvalidAmountException | InsufficientFundsException exception){
             logger.warning(exception.getMessage());
         }
         finally {
@@ -127,6 +132,10 @@ public class AccountManager {
             logger.info("Thực hiện giao dịch chuyển tiền");
             existedAccountFrom.transferMoney(existedAccountTo,amount);
             logger.info("Chuyển tiền thành công.");
+        }
+        catch (AccountNotFoundException accountNotFoundException){
+            logger.warning(accountNotFoundException.getMessage());
+            throw accountNotFoundException;
         }
         catch (InvalidAmountException | InsufficientFundsException exception){
             logger.warning(exception.getMessage());
