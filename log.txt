@@ -1,0 +1,24 @@
+May 14, 2025 11:57:29 AM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 14, 2025 11:57:29 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản tiết kiệm thành công.
+May 14, 2025 11:57:29 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 14, 2025 11:58:24 AM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 14, 2025 11:58:24 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản tiết kiệm thành công.
+May 14, 2025 11:58:24 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 14, 2025 11:58:35 AM manager.AccountManager getBankAccount
+INFO: Thực hiện xem thông tin tài khoản
+May 14, 2025 11:58:35 AM manager.AccountManager getBankAccount
+WARNING: Không tìm thấy mã số tài khoản.
+May 14, 2025 11:58:35 AM manager.AccountManager getBankAccount
+INFO: Kết thúc xem tài khoản
+May 14, 2025 12:01:22 PM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 14, 2025 12:01:22 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản tiết kiệm thành công.
+May 14, 2025 12:01:22 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc

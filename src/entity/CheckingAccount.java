@@ -1,5 +1,8 @@
 package entity;
 
+import exception.InsufficientFundsException;
+import exception.InvalidAmountException;
+
 import java.math.BigDecimal;
 
 public class CheckingAccount extends BankAccount{
@@ -16,13 +19,14 @@ public class CheckingAccount extends BankAccount{
     @Override
     public synchronized void withdraw(double amount) {
         BigDecimal amountBigDecimal = new BigDecimal(String.valueOf(amount));
-        if(amount > 0 && amountBigDecimal.compareTo(this.getBalance()) <= 0
-                && amountBigDecimal.compareTo(this.overdraftLimit) <= 0){
-            this.setBalance(this.getBalance().subtract(new BigDecimal(String.valueOf(amount))));
-            System.out.println("Thực hiện rút tiền thành công.");
-            System.out.println("Số dư: "+ this.getBalance());
+        if (amountBigDecimal.compareTo(BigDecimal.valueOf(0)) <= 0) throw new InsufficientFundsException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
+        if(amountBigDecimal.compareTo(this.getBalance()) > 0) throw new InvalidAmountException("Số dư tài khoản không đủ!");
+        if(amountBigDecimal.compareTo(this.overdraftLimit) > 0) {
+            System.out.println("Số tiền vượt hạn mức chi tiêu.");
         }
-        else System.out.println("Không thể thực hiện rút tiền");
+        this.setBalance(this.getBalance().subtract(new BigDecimal(String.valueOf(amount))));
+        System.out.println("Rút thành công số tiền: " + amount);
+        System.out.println("Số dư tài khoản: " + this.getBalance());
     }
 
     @Override

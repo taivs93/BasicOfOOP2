@@ -2,10 +2,7 @@ import entity.BankAccount;
 import entity.CheckingAccount;
 import entity.SavingAccount;
 import manager.AccountManager;
-
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -18,6 +15,8 @@ public class Main {
         boolean isInUsed = true;
         BankAccount bankAccount;
         String accountNumber;
+        String accountNumberFrom;
+        String accountNumberTo;
         double amount;
         while (isInUsed){
             menu();
@@ -50,14 +49,12 @@ public class Main {
                     accountManager.withDraw(accountNumber,amount);
                     break;
                 case 7:
-                    accountNumber = inputNumberAccount();
-                    accountManager.getInterestRate(accountNumber);
+                    accountNumberFrom = inputNumberAccount();
+                    accountNumberTo = inputNumberAccount();
+                    amount = inputAmount();
+                    accountManager.transferMoney(accountNumberFrom,accountNumberTo,amount);
                     break;
                 case 8:
-                    accountNumber = inputNumberAccount();
-                    accountManager.getInterestFee(accountNumber);
-                    break;
-                case 9:
                     isInUsed = false;
                     break;
                 default: break;
@@ -73,9 +70,8 @@ public class Main {
         System.out.println("4. Xóa tài khoản.");
         System.out.println("5. Nạp tiền vào tài khoản.");
         System.out.println("6. Rút tiền.");
-        System.out.println("7. Xem lãi suất.");
-        System.out.println("8. Xem tiền lãi mỗi năm.");
-        System.out.println("9. Thoát");
+        System.out.println("7. Chuyển tiền");
+        System.out.println("8. Thoát");
         System.out.print("Lựa chọn: ");
     }
     private static Double inputAmount(){

@@ -4,11 +4,6 @@ import java.math.BigDecimal;
 
 public class SavingAccount extends BankAccount{
     private BigDecimal interestRate;
-
-    public BigDecimal getInterestFeePerYear(){
-        return this.getBalance().multiply(this.interestRate);
-    }
-
     public BigDecimal getInterestRate() {
         return interestRate;
     }

@@ -1,28 +1,33 @@
 package entity;
 
+import exception.InsufficientFundsException;
+import exception.InvalidAmountException;
 import java.math.BigDecimal;
 
 public class BankAccount {
     private String accountNumber;
     private String ownerName;
     private BigDecimal balance;
-    public void deposit(double amount){
+    public void deposit(double amount) throws InvalidAmountException{
         if(amount > 0){
             this.balance = this.balance.add(new BigDecimal(String.valueOf(amount)));
-            System.out.println("Nạp tiền thành công.");
         }
-        else System.out.println("Không thể nạp tiền.");
+        else throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
     }
-    public synchronized void withdraw(double amount){
+    public synchronized void withdraw(double amount) throws InvalidAmountException,InsufficientFundsException{
         BigDecimal amountBigDecimal = new BigDecimal(String.valueOf(amount));
-        if(amount > 0 && amountBigDecimal.compareTo(this.balance) <= 0){
-            this.balance = this.balance.subtract(new BigDecimal(String.valueOf(amount)));
-            System.out.println("Rút thành công số tiền: " + amount);
-            System.out.println("Số dư tài khoản: " + this.balance);
-        }
-        else System.out.println("Không thể thực hiện rút tiền.");
-    }
+        if (amountBigDecimal.compareTo(BigDecimal.valueOf(0)) <= 0) throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
+        if(amountBigDecimal.compareTo(this.balance) > 0) throw new InsufficientFundsException("Số dư tài khoản không đủ!");
+        this.balance = this.balance.subtract(new BigDecimal(String.valueOf(amount)));
 
+    }
+    public void transferMoney(BankAccount toBankAccount,double amount) throws InvalidAmountException,InsufficientFundsException{
+        BigDecimal amountBigDecimal = new BigDecimal(String.valueOf(amount));
+        if (amountBigDecimal.compareTo(BigDecimal.valueOf(0)) <= 0) throw new InvalidAmountException("Số tiền giao dịch không được nhỏ hơn hoặc bằng 0!");
+        if(amountBigDecimal.compareTo(this.balance) > 0) throw new InsufficientFundsException("Số dư tài khoản không đủ!");
+        this.balance = this.balance.subtract(new BigDecimal(String.valueOf(amount)));
+        toBankAccount.setBalance(toBankAccount.getBalance().add(amountBigDecimal));
+    }
     public String getAccountNumber() {
         return accountNumber;
     }
