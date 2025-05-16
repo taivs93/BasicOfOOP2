@@ -40,3 +40,15 @@ May 14, 2025 1:09:10 PM manager.AccountManager updateBankAccount
 INFO: Cập nhật thông tin tài khoản thành công
 May 14, 2025 1:09:10 PM manager.AccountManager updateBankAccount
 INFO: Cập nhật thông tin tài khoản kết thúc.
+May 16, 2025 9:54:37 AM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 16, 2025 9:54:38 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản tiết kiệm thành công.
+May 16, 2025 9:54:38 AM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 16, 2025 9:54:48 AM manager.AccountManager getBankAccount
+INFO: Thực hiện xem thông tin tài khoản
+May 16, 2025 9:54:48 AM manager.AccountManager getBankAccount
+INFO: Xem thông tin tài khoản thành công
+May 16, 2025 9:54:48 AM manager.AccountManager getBankAccount
+INFO: Kết thúc xem tài khoản

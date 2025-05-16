@@ -1,6 +1,7 @@
 import entity.BankAccount;
 import entity.CheckingAccount;
 import entity.SavingAccount;
+import entity.Selection;
 import manager.AccountManager;
 import java.math.BigDecimal;
 import java.util.Scanner;
@@ -19,40 +20,41 @@ public class Main {
         while (isInUsed){
             menu();
             int choice = scanner.nextInt();
-            switch (choice){
-                case 1:
+            Selection selection = Selection.getSelectionFromValue(choice);
+            switch (selection){
+                case ADD:
                     bankAccount = inputAccount();
                     accountManager.addBankAccount(bankAccount);
                     break;
-                case 2:
+                case UPDATE:
                     bankAccount = inputAccount();
                     accountManager.updateBankAccount(bankAccount);
                     break;
-                case 3:
+                case GET:
                     accountNumber = inputNumberAccount();
                     accountManager.getBankAccount(accountNumber);
                     break;
-                case 4:
+                case DELETE:
                     accountNumber = inputNumberAccount();
                     accountManager.deleteBankAccount(accountNumber);
                     break;
-                case 5:
+                case DEPOSIT:
                     accountNumber = inputNumberAccount();
                     amount = inputAmount();
                     accountManager.deposit(accountNumber,amount);
                     break;
-                case 6:
+                case WITHDRAW:
                     accountNumber = inputNumberAccount();
                     amount = inputAmount();
                     accountManager.withDraw(accountNumber,amount);
                     break;
-                case 7:
+                case TRANSFER:
                     accountNumberFrom = inputNumberAccount();
                     accountNumberTo = inputNumberAccount();
                     amount = inputAmount();
                     accountManager.transferMoney(accountNumberFrom,accountNumberTo,amount);
                     break;
-                case 8:
+                case EXIT:
                     isInUsed = false;
                     break;
                 default: break;
@@ -62,14 +64,9 @@ public class Main {
 
     private static void menu(){
         System.out.println("Menu");
-        System.out.println("1. Thêm tài khoản ngân hàng.");
-        System.out.println("2. Sửa thông tin tài khoản.");
-        System.out.println("3. Xem thông tin và số dư tài khoản.");
-        System.out.println("4. Xóa tài khoản.");
-        System.out.println("5. Nạp tiền vào tài khoản.");
-        System.out.println("6. Rút tiền.");
-        System.out.println("7. Chuyển tiền");
-        System.out.println("8. Thoát");
+        for (Selection selection : Selection.values()){
+            System.out.println(selection.getValue() + ". "+selection.getDescription());
+        }
         System.out.print("Lựa chọn: ");
     }
     private static Double inputAmount(){
