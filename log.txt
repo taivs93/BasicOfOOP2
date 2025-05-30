@@ -52,3 +52,29 @@ May 16, 2025 9:54:48 AM manager.AccountManager getBankAccount
 INFO: Xem thông tin tài khoản thành công
 May 16, 2025 9:54:48 AM manager.AccountManager getBankAccount
 INFO: Kết thúc xem tài khoản
+May 30, 2025 2:30:16 PM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 30, 2025 2:30:16 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản thanh toán thành công.
+May 30, 2025 2:30:16 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 30, 2025 2:30:43 PM manager.AccountManager deposit
+INFO: Giao dịch kết thúc
+May 30, 2025 2:31:06 PM manager.AccountManager addBankAccount
+INFO: Thực hiện thêm tài khoản.
+May 30, 2025 2:31:06 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản thanh toán thành công.
+May 30, 2025 2:31:06 PM manager.AccountManager addBankAccount
+INFO: Thêm tài khoản kết thúc
+May 30, 2025 2:31:22 PM manager.AccountManager deposit
+INFO: Thực hiện nạp tiền vào tài khoản.
+May 30, 2025 2:31:22 PM manager.AccountManager deposit
+INFO: Nạp tiền vào tai khoản thành công
+May 30, 2025 2:31:22 PM manager.AccountManager deposit
+INFO: Giao dịch kết thúc
+May 30, 2025 2:31:31 PM manager.AccountManager withDraw
+INFO: Thực hiện giao dịch rút tiền.
+May 30, 2025 2:31:31 PM manager.AccountManager withDraw
+INFO: Rút tiền thành công.
+May 30, 2025 2:31:31 PM manager.AccountManager withDraw
+INFO: Giao dịch kết thúc.
