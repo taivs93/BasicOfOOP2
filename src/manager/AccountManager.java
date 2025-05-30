@@ -14,8 +14,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 public class AccountManager {
-    private static final List<BankAccount> bankAccounts = new ArrayList<>();
-    private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
+    private static List<BankAccount> bankAccounts = new ArrayList<>();
+    private static Logger logger = Logger.getLogger(AccountManager.class.getName());
     static {
         try {
             FileHandler fileHandler = new FileHandler("log.txt", true);
